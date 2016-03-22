@@ -39,9 +39,10 @@ gulp.task('fonts', function(){
 });
 
 gulp.task('browserify', function() {
-  stream = gulp.src('./scripts/index.coffee', { read: false })
+  stream = gulp.src('./app/scripts/index.coffee', { read: false })
     .pipe(maps.init())
     .pipe(browserify({
+      paths: ['./node_modules', './app/scripts', './app'],
       debug: environment == 'development',
       transform: ['coffeeify', 'jadeify'],
       extensions: ['.coffee', '.jade']
@@ -57,7 +58,7 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('stylus', function() {
-  var stream = gulp.src('./styles/index.styl')
+  var stream = gulp.src('./app/styles/index.styl')
     .pipe(maps.init())
     .pipe(stylus({
       use: [bootstrap()]
@@ -73,7 +74,7 @@ gulp.task('stylus', function() {
 });
 
 gulp.task('html', function() {
-  return gulp.src('./index.jade')
+  return gulp.src('./app/index.jade')
     .pipe(jade({
       pretty: environment == 'development'
     }))
@@ -89,10 +90,10 @@ gulp.task('webserver', function() {
 gulp.task('build', ['browserify', 'stylus', 'html', 'fonts', 'vendor']);
 
 gulp.task('watch', ['webserver', 'build'], function() {
-  gulp.watch('./styles/**/*.styl', ['stylus']);
-  gulp.watch('./scripts/**/*.coffee', ['browserify']);
-  gulp.watch('./templates/**/*.jade', ['browserify']);
-  gulp.watch('./index.jade', ['html']);
+  gulp.watch('./app/styles/**/*.styl', ['stylus']);
+  gulp.watch('./app/scripts/**/*.coffee', ['browserify']);
+  gulp.watch('./app/templates/**/*.jade', ['browserify']);
+  gulp.watch('./app/index.jade', ['html']);
 });
 
 gulp.task('default', ['build']);

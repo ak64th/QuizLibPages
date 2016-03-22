@@ -1,4 +1,4 @@
-UIMixin = require('ui-mixin')
+UIMixin = require('./ui-mixin')
 
 app = {}
 _.extend(app, UIMixin);

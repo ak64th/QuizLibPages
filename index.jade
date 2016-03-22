@@ -1,0 +1,125 @@
+doctype html
+html
+  head
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(charset='utf-8')
+    title 题库管理后台
+    meta(name='viewport', content='width=device-width')
+    link(href='/css/index.css', rel='stylesheet', type='text/css')
+  body
+  html
+  body.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='#/')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            | 题
+          // logo for regular state and mobile devices
+          span.logo-lg
+            | 题库管理系统
+        // Header Navbar: style can be found in header.styl
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle.glyphicon-menu-hamburger#collapseToggle(href='#', role='button')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.styl and sidebar-mini.styl
+        section.sidebar(style='height: auto;')
+          // sidebar menu
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.treeview
+              a(href='#')
+                i.glyphicon.glyphicon-dashboard
+                span Layout Options
+                span.label.label-primary.pull-right 4
+              ul.treeview-menu
+                li
+                  a(href='layout/top-nav.html')
+                    i.fa.fa-circle-o
+                    |  Top Navigation
+                li
+                  a(href='layout/boxed.html')
+                    i.fa.fa-circle-o
+                    |  Boxed
+                li
+                  a(href='layout/fixed.html')
+                    i.fa.fa-circle-o
+                    |  Fixed
+                li
+                  a(href='layout/collapsed-sidebar.html')
+                    i.fa.fa-circle-o
+                    |  Collapsed Sidebar
+            li
+              a(href='widgets.html')
+                i.fa.fa-th
+                span Widgets
+                small.label.pull-right.bg-green new
+            li.treeview
+              a(href='#')
+                i.fa.fa-edit
+                span Forms
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='forms/general.html')
+                    i.fa.fa-circle-o
+                    |  General Elements
+                li
+                  a(href='forms/advanced.html')
+                    i.fa.fa-circle-o
+                    |  Advanced Elements
+                li
+                  a(href='forms/editors.html')
+                    i.fa.fa-circle-o
+                    |  Editors
+            li.treeview.active
+              a(href='#')
+                i.fa.fa-table
+                span Tables
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu.menu-open(style='display: block;')
+                li
+                  a(href='tables/simple.html')
+                    i.fa.fa-circle-o
+                    |  Simple tables
+                li
+                  a(href='tables/data.html')
+                    i.fa.fa-circle-o
+                    |  Data tables
+            li.header LABELS
+            li
+              a(href='#')
+                i.fa.fa-circle-o.text-red
+                span Important
+            li
+              a(href='#')
+                i.fa.fa-circle-o.text-yellow
+                span Warning
+            li
+              a(href='#')
+                i.fa.fa-circle-o.text-aqua
+                span Information
+        // /.sidebar      
+      .content-wrapper
+        // main content
+        section.content-header
+          h1 活动列表
+        section.content
+          .row.col-xs-12
+            p. 
+              大家好
+      footer.main-footer
+        .pull-right.hidden-xs
+          b Version 1.0.0
+        strong Copyright © 2015-2016 
+          a(href="http://intfocus.com/") IntFocus 
+          | All rights reserved.
+
+  script(src="/js/vendor.js")
+  script(src="/js/index.js")

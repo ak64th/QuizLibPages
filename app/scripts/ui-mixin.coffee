@@ -1,4 +1,4 @@
-UIMixin =
+module.exports =
   layout:
     activate: ->
       self = this
@@ -51,5 +51,3 @@ UIMixin =
           parent_li.addClass "active"
           self.layout.fix()
       e.preventDefault()  if checkElement.is(".treeview-menu")
-
-module.exports = UIMixin

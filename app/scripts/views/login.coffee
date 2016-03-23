@@ -5,6 +5,12 @@ LoginView = Backbone.View.extend
   render: ->
     @$el.html @template()
     return @
-  login: -> console.log('login')
+  login: (e) ->
+    e.preventDefault()
+    data = Backbone.Syphon.serialize(this);
+    # Todo: send ajax request
+    console.log data
+    cb = _.bind (-> @commands.execute('forwardBack')), @
+    setTimeout(cb, 1000)
 
 module.exports = LoginView

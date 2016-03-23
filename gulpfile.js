@@ -26,13 +26,16 @@ var handleError = function (err) {
 gulp.task('vendor', function(){
   return gulp.src([
     './bower_components/jquery/dist/jquery.js',
+    './bower_components/ladda/js/ladda.js',
+    './bower_components/ladda/js/ladda.jquery.js',
+    './bower_components/spin.js/spin.js',
     './bower_components/bootstrap/dist/js/bootstrap.js',
     './bower_components/underscore/underscore.js',
     './bower_components/backbone/backbone.js',
-    './bower_components/backbone.stickit/backbone.stickit.js',
-    './bower_components/backbone.bootstrap-modal/src/backbone.bootstrap-modal.js',
-    './bower_components/backbone.marionette/lib/backbone.marionette.js',
     './bower_components/backgrid/lib/backgrid.js',
+    './bower_components/backbone.wreqr/lib/backbone.wreqr.js',
+    './bower_components/backbone.syphon/lib/backbone.syphon.js',
+    './bower_components/backbone.bootstrap-modal/src/backbone.bootstrap-modal.js',
     './bower_components/backbone.bootstrap/lib/backbone.bootstrap.js'
   ])
   .pipe(concat('vendor.js'))

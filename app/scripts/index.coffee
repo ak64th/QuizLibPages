@@ -8,5 +8,4 @@ $ ->
   app.layout.activate()
   app.pushMenu.activate()
   app.tree()
-  app.setErrorHandler()
   Backbone.history.start()

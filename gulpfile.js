@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var jade = require('gulp-jade');
 var concat = require('gulp-concat');
 var stylus = require('gulp-stylus');
@@ -16,6 +17,11 @@ var environment = 'development';
 gulp.task('set-production', function() {
   environment = 'production';
 });
+
+var handleError = function (err) {
+  gutil.log(err.toString());
+  this.emit('end');
+}
 
 gulp.task('vendor', function(){
   return gulp.src([
@@ -46,7 +52,7 @@ gulp.task('browserify', function() {
       debug: environment == 'development',
       transform: ['coffeeify', 'jadeify'],
       extensions: ['.coffee', '.jade']
-    }))
+    })).on('error', handleError)
     .pipe(concat('index.js'))
 
   if (environment == 'production') {
